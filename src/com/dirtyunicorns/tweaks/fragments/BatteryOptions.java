@@ -41,10 +41,21 @@ import java.util.List;
 public class BatteryOptions extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private Preference mChargingLeds;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.battery_options);
+
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mChargingLeds = (Preference) findPreference("charging_light");
+        if (mChargingLeds != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(mChargingLeds);
+        }
     }
 
     @Override
