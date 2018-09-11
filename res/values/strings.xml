@@ -83,6 +83,9 @@
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
 
+    <!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Navbar Tuner</string>
+
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Network Traffic</string>
     <string name="network_traffic_state_summary">Show net activity in statusbar</string>

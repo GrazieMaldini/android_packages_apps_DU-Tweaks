@@ -22,6 +22,13 @@
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
 
+    <Preference
+            android:title="@string/navbar_tuner_title" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.NavBarActivity" />
+    </Preference>
+
         <SwitchPreference
             android:key="hardware_keys_disable"
             android:title="@string/hardware_keys_disable_title"
