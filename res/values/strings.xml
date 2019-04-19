@@ -684,4 +684,10 @@
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
     <string name="audio_panel_view_position_title">Volume panel on left</string>
 
+    <!-- Lockscreen text clock align -->
+    <string name="lockscreen_clock_align_title">Q Clock Alignment</string>
+    <string name="lockscreen_clock_align0">Left</string>
+    <string name="lockscreen_clock_align1">Center</string>
+    <string name="lockscreen_clock_align2">Right</string>
+
 </resources>
