@@ -783,4 +783,7 @@
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
+    <!-- Q To Center Clock -->
+    <string name="center_text_clock_title">Center Text Clock</string>
+    <string name="center_text_clock_summary">Tranform Q-Clock to Center Clock</string>
 </resources>
