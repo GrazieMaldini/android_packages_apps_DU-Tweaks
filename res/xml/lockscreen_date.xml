@@ -26,6 +26,12 @@
 	android:entryValues="@array/lockscreen_date_selection_values"
 	android:defaultValue="0" />
 
+    <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
+        android:key="left_align_view"
+        android:title="@string/left_align_view_title"
+        android:summary="@string/left_align_view_summary"
+        android:defaultValue="false" />
+
     <com.dirtyunicorns.support.preferences.CustomSeekBarPreference
         android:key="lockdate_font_size"
         android:title="@string/lockdate_font_size_title"

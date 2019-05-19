@@ -786,4 +786,7 @@
     <!-- Q To Center Clock -->
     <string name="center_text_clock_title">Center Text Clock</string>
     <string name="center_text_clock_summary">Tranform Q-Clock to Center Clock</string>
+
+    <string name="left_align_view_title">Left Align Date n Weather</string>
+    <string name="left_align_view_summary">Align Weather and Date View to Q-Clock</string>
 </resources>
