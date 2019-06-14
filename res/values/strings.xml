@@ -618,6 +618,7 @@
     <string name="lockscreen_cover_filter_none">None</string>
     <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
     <string name="lockscreen_cover_filter_blur">Blur</string>
+    <string name="lockscreen_cover_filter_tinted_blur">Accent Tinted and blurred</string>
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
@@ -759,4 +760,10 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Full</string>
     <string name="screenshot_type_partial">Partial</string>
+
+    <!-- Powermenu Background -->
+    <string name="power_menu_bg_title">Background Filter</string>
+    <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
+    <string name="power_menu_bg_style_title">Filter Type</string>
+
 </resources>
