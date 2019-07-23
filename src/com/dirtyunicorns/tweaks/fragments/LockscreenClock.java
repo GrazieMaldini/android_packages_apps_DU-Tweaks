@@ -52,6 +52,7 @@ public class LockscreenClock extends SettingsPreferenceFragment
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
     private static final String CUSTOM_TEXT_CLOCK_FONT_SIZE  = "custom_text_clock_font_size";
+    private static final String LOCKSCREEN_CLOCK_SELECTION  = "lockscreen_clock_selection";
 
     ListPreference mLockClockFonts;
     SystemSettingListPreference mLockClockStyle;

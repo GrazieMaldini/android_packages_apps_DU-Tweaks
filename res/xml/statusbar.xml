@@ -37,7 +37,7 @@
         android:summary="@string/clock_options_summary"
         android:fragment="com.dirtyunicorns.tweaks.fragments.ClockOptions" />
 
-    </com.dirtyunicorns.tweaks.preferences.CategoryPreference
+    <com.dirtyunicorns.tweaks.preferences.CategoryPreference
         android:key="traffic_category"
         android:icon="@drawable/dt_traffic"
         android:title="@string/traffic_title"

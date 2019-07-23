@@ -23,11 +23,14 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.UserHandle;
+import android.graphics.Color;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.PreferenceCategory;
@@ -63,6 +66,10 @@ public class Interfaces extends SettingsPreferenceFragment
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
 
+    private Handler mHandler;
+    private OverlayManagerWrapper mOverlayService;
+    private PackageManager mPackageManager;
+    private Fragment mCurrentFragment = this;
     private ColorPickerPreference mThemeColor;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;

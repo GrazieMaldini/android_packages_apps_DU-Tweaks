@@ -122,6 +122,7 @@
     <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
 
     <!-- Themes -->
+    <string name="accent_color">RGB Accent Color</string>
     <string name="theme_category_title">Theme options</string>
     <string name="accent_picker_dialog_title">Select an accent color</string>
     <string name="theme_accent_picker_title">Accent color</string>
