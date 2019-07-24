@@ -750,4 +750,11 @@
     <string name="file_header_select_summary">Select custom image</string>
     <string name="file_header_provider_title">Custom image</string>
     <string name="file_header_provider" translatable="false">file</string>
+
+    <!-- Battery Estimate -->
+    <string name="show_battery_estimate_title">Battery Estimates</string>
+    <string name="show_battery_estimate_summary">Show Battery Estimates in QS Panel</string>
+    <string name="battery_estimate_position_title">Battery Icon &amp; Estimates Position</string>
+    <string name="battery_estimate_position_qsheader">QS Header</string>
+    <string name="battery_estimate_position_qspanel">QS Panel</string>
 </resources>
