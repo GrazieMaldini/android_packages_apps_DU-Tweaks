@@ -95,12 +95,6 @@ public class LockscreenDate extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKDATE_FONT_SIZE, top*1);
             return true;
-	} else if (preference == mLockOwnerFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNER_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockOwnerFonts.setValue(String.valueOf(newValue));
-            mLockOwnerFonts.setSummary(mLockOwnerFonts.getEntry());
-            return true;
 	}
         return false;
     }
