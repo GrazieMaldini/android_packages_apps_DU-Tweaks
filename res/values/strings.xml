@@ -27,7 +27,7 @@
     <string name="bottom_nav_system_title">System</string>
     <string name="bottom_nav_lockscreen_title">Lockscreen</string>
     <string name="bottom_nav_statusbar_title">Statusbar</string>
-    <string name="bottom_nav_navigation_title">Navigation</string>
+    <string name="bottom_nav_navigation_title">Hardware Button</string>
     <string name="bottom_nav_multitasking_title">Multitasking</string>
 
     <!-- General strings -->
@@ -88,7 +88,7 @@
 
     <!-- Navigation -->
     <string name="buttons_title">Buttons</string>
-    <string name="buttons_summary">Configure volume rocker options</string>
+    <string name="buttons_summary">Configure Buttons options</string>
     <string name="navigation_options_title">Navigation</string>
     <string name="navigation_options_summary">Configure navigation options</string>
     <!-- Multitasking -->
