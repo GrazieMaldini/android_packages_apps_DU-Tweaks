@@ -35,22 +35,24 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.SettingsPreferenceFragment;
+import com.dirtyunicorns.support.preferences.IconPackPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recents extends SettingsPreferenceFragment implements Indexable {
-
+public class Recents extends SettingsPreferenceFragment
+        implements Preference.OnPreferenceChangeListener, Indexable {
+			
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
-    private static final int RECENTS_COMPONENT_OREO = 1;
 
     private ListPreference mRecentsComponentType;
-    private PreferenceCategory oreoRecentsCat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.recents);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         // recents component type
         mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
@@ -60,8 +62,6 @@ public class Recents extends SettingsPreferenceFragment implements Indexable {
         mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
         mRecentsComponentType.setOnPreferenceChangeListener(this);
 
-        oreoRecentsCat = (PreferenceCategory)findPreference("recents_ui_oreo_recents_category");
-        oreoRecentsCat.setEnabled(type == RECENTS_COMPONENT_OREO);
     }
 
     @Override
@@ -74,14 +74,15 @@ public class Recents extends SettingsPreferenceFragment implements Indexable {
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
         if (preference == mRecentsComponentType) {
             int type = Integer.valueOf((String) newValue);
             int index = mRecentsComponentType.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_COMPONENT, type);
             mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
-            oreoRecentsCat.setEnabled(type == RECENTS_COMPONENT_OREO);
-            if (type == RECENTS_COMPONENT_OREO) { // Disable swipe up gesture, if oreo type selected
+            if (type == 1) { // Disable swipe up gesture, if oreo type selected
                Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
             }
