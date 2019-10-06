@@ -18,6 +18,13 @@
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
             android:title="@string/navigation_options_title" >
 
+        <SwitchPreference
+            android:key="disable_nav_keys"
+            android:title="@string/disable_navkeys_title"
+            android:summary="@string/disable_navkeys_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
+
     <Preference
         android:key="gesture_settings"
         android:title="@string/aosp_gesture_preference"
