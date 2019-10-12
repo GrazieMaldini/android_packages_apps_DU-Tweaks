@@ -17,7 +17,9 @@
 package com.dirtyunicorns.tweaks.fragments;
 
 import android.content.Context;
+import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -31,7 +33,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+//import com.android.settings.Utils;
 
 import com.android.internal.util.du.Utils;
 
