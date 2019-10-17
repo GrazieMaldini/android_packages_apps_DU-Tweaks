@@ -80,6 +80,7 @@ public class IconManager extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+			ContentResolver resolver = getActivity().getContentResolver();
             if (preference == mIconColor) {
                 String hex = ColorPickerPreference.convertToARGB(Integer
                        .valueOf(String.valueOf(newValue)));

@@ -40,6 +40,7 @@ import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.text.Spannable;
 import android.text.TextUtils;
+import android.widget.EditText;
 
 import com.android.internal.logging.nano.MetricsProto;
 
