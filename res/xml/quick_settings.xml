@@ -84,7 +84,7 @@
 
     <PreferenceCategory
         android:key="quick_settings_animations"
-        android:title="@string/qs_animation_options_title"/>
+        android:title="@string/qs_animation_options_title">
 
         <ListPreference
             android:key="qs_tile_animation_style"

@@ -159,13 +159,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         return false;
     }
 
-    private void updateTileAnimationInterpolatorSummary(int tileAnimationInterpolator) {
-        String prefix = (String) mTileAnimationInterpolator.getEntries()[mTileAnimationInterpolator.findIndexOfValue(String
-                .valueOf(tileAnimationInterpolator))];
-        mTileAnimationInterpolator.setSummary(getResources().getString(R.string.qs_set_animation_interpolator, prefix));
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
+    private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
         String prefix = (String) mTileAnimationStyle.getEntries()[mTileAnimationStyle.findIndexOfValue(String
                 .valueOf(tileAnimationStyle))];
         mTileAnimationStyle.setSummary(getResources().getString(R.string.qs_set_animation_style, prefix));
@@ -177,7 +171,13 @@ public class QuickSettings extends SettingsPreferenceFragment
         mTileAnimationDuration.setSummary(getResources().getString(R.string.qs_set_animation_duration, prefix));
     }
 
-    private void updateAnimTileDuration(int tileAnimationStyle) {
+    private void updateTileAnimationInterpolatorSummary(int tileAnimationInterpolator) {
+        String prefix = (String) mTileAnimationInterpolator.getEntries()[mTileAnimationInterpolator.findIndexOfValue(String
+                .valueOf(tileAnimationInterpolator))];
+        mTileAnimationInterpolator.setSummary(getResources().getString(R.string.qs_set_animation_interpolator, prefix));
+    }
+
+    private void updateAnimTileStyle(int tileAnimationStyle) {
         if (mTileAnimationDuration != null) {
             if (tileAnimationStyle == 0) {
                 mTileAnimationDuration.setEnabled(false);

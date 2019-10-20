@@ -144,8 +144,8 @@ public class DirtyTweaks extends SettingsPreferenceFragment {
                 getString(R.string.bottom_nav_system_title),
                 getString(R.string.bottom_nav_statusbar_title),
                 getString(R.string.bottom_nav_lockscreen_title),
-                getString(R.string.bottom_nav_hardware_title),
-                //getString(R.string.bottom_nav_multitasking_title)};
+                getString(R.string.bottom_nav_hardware_title),};
+                //getString(R.string.bottom_nav_multitasking_title)
 
         return titleString;
     }

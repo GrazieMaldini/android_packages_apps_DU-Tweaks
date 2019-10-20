@@ -36,7 +36,7 @@ import com.dirtyunicorns.support.preferences.CustomSeekBarPreference;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+//import com.android.settings.Utils;
 import com.android.internal.util.du.Utils;
 
 import java.util.ArrayList;
@@ -58,6 +58,7 @@ public class NavigationOptions extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.navigation_options);
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         int nav_height = Settings.System.getIntForUser(resolver,
                 Settings.System.NAVIGATION_BAR_HEIGHT, 48, UserHandle.USER_CURRENT);
