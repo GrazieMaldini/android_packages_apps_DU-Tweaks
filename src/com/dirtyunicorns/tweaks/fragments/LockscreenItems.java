@@ -41,14 +41,52 @@ import java.util.List;
 public class LockscreenItems extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_AUTOCOLOR = "lockscreen_visualizer_autocolor";
+    private static final String KEY_LAVALAMP = "lockscreen_lavalamp_enabled";
+
+    private SwitchPreference mAutoColor;
+    private SwitchPreference mLavaLamp;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_items);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        boolean mLavaLampEnabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED, 1,
+                UserHandle.USER_CURRENT) != 0;
+
+        mAutoColor = (SwitchPreference) findPreference(KEY_AUTOCOLOR);
+        mAutoColor.setEnabled(!mLavaLampEnabled);
+
+        if (mLavaLampEnabled) {
+            mAutoColor.setSummary(getActivity().getString(
+                    R.string.lockscreen_autocolor_lavalamp));
+        } else {
+            mAutoColor.setSummary(getActivity().getString(
+                    R.string.lockscreen_autocolor_summary));
+        }
+
+        mLavaLamp = (SwitchPreference) findPreference(KEY_LAVALAMP);
+        mLavaLamp.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLavaLamp) {
+            boolean mLavaLampEnabled = (Boolean) newValue;
+            if (mLavaLampEnabled) {
+                mAutoColor.setSummary(getActivity().getString(
+                        R.string.lockscreen_autocolor_lavalamp));
+            } else {
+                mAutoColor.setSummary(getActivity().getString(
+                        R.string.lockscreen_autocolor_summary));
+            }
+            return true;
+        }
         return false;
     }
 
