@@ -45,6 +45,8 @@ public class BatteryOptions extends SettingsPreferenceFragment
 
     private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
 
+    private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -26,8 +26,7 @@
             android:title="@string/power_menu_transparency"
             android:max="100"
             android:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="%"
+            settings:units="%"
             android:defaultValue="100" />
 
 	<com.dirtyunicorns.support.preference.SystemSettingSeekBarPreference
@@ -35,8 +34,7 @@
             android:title="@string/power_menu_dialog_dim"
             android:max="100"
             android:min="0"
-            settings:unitsLeft=""
-            settings:unitsRight="%"
+            settings:units="%"
             android:defaultValue="50" />
     </PreferenceCategory>
 

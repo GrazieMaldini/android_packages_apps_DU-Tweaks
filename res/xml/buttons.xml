@@ -34,8 +34,7 @@
         android:max="10000"
         android:defaultValue="3000"
         settings:interval="100"
-        settings:unitsLeft=""
-        settings:unitsRight="ms" />
+        settings:units="ms" />
 
     <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
         android:key="volume_button_music_control"
