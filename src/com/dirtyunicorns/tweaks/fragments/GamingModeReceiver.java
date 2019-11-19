@@ -25,7 +25,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.text.TextUtils;
 
-import com.crdroid.settings.R;
+import com.android.settings.R;
 import com.android.internal.util.du.GamingModeController;
 
 public class GamingModeReceiver extends BroadcastReceiver {

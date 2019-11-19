@@ -52,6 +52,8 @@ public class TrafficIndicators extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.traffic_indicators);
 
+        final ContentResolver resolver = getActivity().getContentResolver();
+
         mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
         int NetTrafficSize = Settings.System.getInt(resolver,
                 Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 21);

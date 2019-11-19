@@ -47,7 +47,7 @@
         android:dependency="gaming_mode_enabled"
         android:defaultValue="true" />
 
-    <com.dirtyunicorns.settings.preferences.SystemSettingListPreference
+    <com.dirtyunicorns.support.preferences.SystemSettingListPreference
         android:key="gaming_mode_ringer_mode"
         android:title="@string/gaming_mode_ringer_title"
         android:entries="@array/gaming_mode_ringer_entries"
