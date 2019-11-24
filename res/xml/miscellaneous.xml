@@ -24,6 +24,14 @@
             android:summary="@string/animation_settings_summary"
             android:fragment="com.dirtyunicorns.tweaks.fragments.AnimationSettings" />
 
+
+        <com.dirtyunicorns.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="gaming_mode_enabled"
+            android:fragment="com.dirtyunicorns.tweaks.fragments.GamingMode"
+            android:title="@string/gaming_mode_title"
+            android:summary="@string/gaming_mode_summary"
+            android:defaultValue="false" />
+
         <com.dirtyunicorns.support.preferences.SecureSettingSwitchPreference
             android:key="charging_vibration_enabled"
             android:title="@string/vibration_on_charge_state_changed_title"
@@ -50,12 +58,6 @@
             android:summary="@string/pref_scrollingcache_summary"
             android:entries="@array/entries_scrollingcache"
             android:entryValues="@array/values_scrollingcache" />
-
-        <Preference
-            android:key="gaming_mode"
-            android:title="@string/gaming_mode_title"
-            android:summary="@string/gaming_mode_summary"
-            android:fragment="com.dirtyunicorns.tweaks.fragments.GamingMode"/>
 
         <com.dirtyunicorns.support.preferences.SystemSettingMasterSwitchPreference
            android:key="screen_state_toggles_enable_key"
