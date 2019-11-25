@@ -62,6 +62,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings_rounded_corners);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         Resources res = null;
         Context ctx = getContext();
@@ -116,6 +117,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+	    ContentResolver resolver = getActivity().getContentResolver();
 	 if (preference == mCornerRadius) {
             Settings.Secure.putInt(resolver, Settings.Secure.SYSUI_ROUNDED_SIZE,
                     ((int) newValue) * 1);

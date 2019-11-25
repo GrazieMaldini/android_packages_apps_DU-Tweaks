@@ -24,6 +24,7 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
@@ -55,6 +56,7 @@ public class Notifications extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.notifications);
+        PreferenceScreen prefScreen = getPreferenceScreen();
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {

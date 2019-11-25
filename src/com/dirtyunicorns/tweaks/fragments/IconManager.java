@@ -45,6 +45,8 @@ public class IconManager extends SettingsPreferenceFragment
 
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
 
+    private SystemSettingMasterSwitchPreference mStatusBarLogo;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
