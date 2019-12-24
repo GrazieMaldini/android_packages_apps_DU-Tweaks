@@ -16,7 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-            android:title="@string/lockscreen_sytle_title" >
+            android:title="@string/lockscreen_style_title" >
 
         <ListPreference
             android:key="lock_clock_fonts"
@@ -82,7 +82,7 @@
             android:entries="@array/lock_clock_fonts_entries"
             android:entryValues="@array/lock_clock_fonts_values"
             android:summary="%s"
-            ndroid:defaultValue="32"
+            android:defaultValue="32"
             android:persistent="false" />
 
         <com.dirtyunicorns.support.preferences.CustomSeekBarPreference
