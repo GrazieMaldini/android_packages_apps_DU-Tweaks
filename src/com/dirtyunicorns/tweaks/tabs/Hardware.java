@@ -27,11 +27,12 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class Navigation extends SettingsPreferenceFragment
+public class Hardware extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String BUTTONS_CATEGORY = "buttons_category";
     private static final String NAVIGATION_CATEGORY = "navigation_category";
+    private static final String POWERMENU_CATEGORY = "powermenu_category";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,11 @@ public class Navigation extends SettingsPreferenceFragment
         Preference Navigation = findPreference(NAVIGATION_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_navigation)) {
             getPreferenceScreen().removePreference(Navigation);
+        }
+
+        Preference PowerMenu = findPreference(POWERMENU_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_powermenu)) {
+            getPreferenceScreen().removePreference(PowerMenu);
         }
     }
 
