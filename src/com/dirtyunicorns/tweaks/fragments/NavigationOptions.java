@@ -49,7 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NavigationOptions extends ActionFragment 
-	implements OnPreferenceChangeListener, Indexable {
+	implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";

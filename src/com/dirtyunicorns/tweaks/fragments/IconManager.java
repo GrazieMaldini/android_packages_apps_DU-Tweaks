@@ -17,6 +17,7 @@
 package com.dirtyunicorns.tweaks.fragments;
 
 import android.content.Context;
+import android.content.ContentResolver;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;

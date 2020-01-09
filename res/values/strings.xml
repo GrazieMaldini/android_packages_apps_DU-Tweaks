@@ -76,6 +76,7 @@
     <string name="active_edge_summary">Configure Active Edge options</string>
 
     <!-- Misc -->
+    <string name="sub_cat_advanced">Advanced</string>
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>

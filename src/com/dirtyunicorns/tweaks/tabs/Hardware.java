@@ -37,7 +37,7 @@ public class Hardware extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.navigation);
+        addPreferencesFromResource(R.xml.hardware);
 
         Preference Buttons = findPreference(BUTTONS_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_buttons)) {
