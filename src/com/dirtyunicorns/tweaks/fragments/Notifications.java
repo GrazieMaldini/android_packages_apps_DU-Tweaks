@@ -33,7 +33,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
-import com.dirtyunicorns.tweaks.preferences.TelephonyUtils;
+import com.dirtyunicorns.tweaks.preferences.KontolUtils;
 import com.android.internal.util.du.Utils;
 
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class Notifications extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+        if (!KontolUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
 
@@ -107,7 +107,7 @@ public class Notifications extends SettingsPreferenceFragment
         mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
         mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
         mFlashlightOnCall.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceHasFlashlight(getActivity())) {
+        if (!KontolUtils.deviceSupportsFlashLight(getActivity())) {
             prefScreen.removePreference(FlashOnCall);
         }
     }

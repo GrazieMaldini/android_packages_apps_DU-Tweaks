@@ -6,9 +6,9 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 
-public class Utils {
+public class KontolUtils {
 
-    private static final String TAG = Utils.class.getSimpleName();
+    private static final String TAG = KontolUtils.class.getSimpleName();
 
     /**
      * Returns whether the device is voice-capable (meaning, it is also a phone).

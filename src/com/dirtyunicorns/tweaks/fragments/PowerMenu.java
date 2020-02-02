@@ -33,7 +33,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.widget.LockPatternUtils;
-import com.dirtyunicorns.tweaks.fragments.preferences.Utils;
+import com.dirtyunicorns.tweaks.preferences.KontolUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +74,7 @@ public class PowerMenu extends SettingsPreferenceFragment
 
         mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
         mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+        if (!KontolUtils.deviceSupportsFlashLight(getActivity())) {
             prefScreen.removePreference(mPowermenuTorch);
         } else {
         mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
