@@ -76,13 +76,9 @@ public class GamingMode extends SettingsPreferenceFragment
     private String mGamingPackageList;
     private Map<String, Package> mGamingPackages;
 
-
-    private static final int KEY_MASK_HOME = 0x01;
-    private static final int KEY_MASK_BACK = 0x02;
-    private static final int KEY_MASK_MENU = 0x04;
-    private static final int KEY_MASK_APP_SWITCH = 0x10;
-
     private Context mContext;
+
+    private boolean defaultToNavigationBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,6 +89,8 @@ public class GamingMode extends SettingsPreferenceFragment
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.add_gaming_mode_package_summary);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final ContentResolver resolver = getActivity().getContentResolver();
+
         mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
 
         mGamingModeEnabled = (SwitchPreference) findPreference(GAMING_MODE_ENABLED);
@@ -100,6 +98,13 @@ public class GamingMode extends SettingsPreferenceFragment
         if (!hasHWkeys()) {
             prefScreen.removePreference(mHardwareKeysDisable);
         }
+
+        mHardwareKeysDisable = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        mHardwareKeysDisable = Settings.System.getIntForUser(
+                resolver, Settings.System.FORCE_SHOW_NAVBAR,
+                defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
@@ -238,8 +243,10 @@ public class GamingMode extends SettingsPreferenceFragment
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasCamera = (deviceKeys & KEY_MASK_CAMERA) != 0;
+        final boolean hasAssist = (deviceKeys & KEY_MASK_ASSIST) != 0;
 
-        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
+        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey || hasCamera || hasAssist);
     }
 
     private void refreshCustomApplicationPrefs() {
