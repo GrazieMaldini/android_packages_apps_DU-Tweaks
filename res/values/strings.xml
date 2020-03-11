@@ -20,9 +20,6 @@
     <string name="dirtytweaks_title">Dirty Tweaks</string>
     <string name="dirtytweaks_summary">Enhance your experience</string>
 
-    <!-- The Team -->
-    <string name="dialog_team_title">The Team</string>
-
     <!-- Bottom navigation -->
     <string name="bottom_nav_system_title">System</string>
     <string name="bottom_nav_lockscreen_title">Lockscreen</string>
