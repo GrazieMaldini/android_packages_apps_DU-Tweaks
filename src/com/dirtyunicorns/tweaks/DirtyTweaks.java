@@ -112,13 +112,21 @@ public class DirtyTweaks extends SettingsPreferenceFragment implements
 
         setHasOptionsMenu(true);
         bottomNavigation.setSelectedItemId(R.id.system);
-        switchFrag(new StatusBar());
+        switchFrag(new Statusbar());
         bottomNavigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
         return view;
     }
 
     private void switchFrag(Fragment fragment) {
         getFragmentManager().beginTransaction().replace(R.id.fragment_frame, fragment).commit();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+        getActivity().setTitle(R.string.dirtytweaks_title);
+        ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
