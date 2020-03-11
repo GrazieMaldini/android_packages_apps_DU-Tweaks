@@ -74,9 +74,9 @@ public class DirtyTweaks extends SettingsPreferenceFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         
-        View view = inflater.inflate(R.layout.layout_extensions, container, false);
+        View view = inflater.inflate(R.layout.dirtytweaks, container, false);
 
-        final BottomNavigationView bottomNavigation = (BottomNavigationView) view.findViewById(R.id.bottom_navigation);
+        final BottomNavigationView bottomNavigation = (BottomNavigationView) view.findViewById(R.id.navigation);
 
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -146,13 +146,4 @@ public class DirtyTweaks extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
         return true;
     }
-
-    public static final SummaryLoader.SummaryProviderFactory SUMMARY_PROVIDER_FACTORY
-            = new SummaryLoader.SummaryProviderFactory() {
-        @Override
-        public SummaryLoader.SummaryProvider createSummaryProvider(Activity activity,
-                                                                   SummaryLoader summaryLoader) {
-            return new SummaryProvider(activity, summaryLoader);
-        }
-    };
 }
